@@ -10,7 +10,7 @@ declare(strict_types = 1);
 class Controller
 {
     // Load model
-    public function model(string $model)
+    protected function model(string $model)
     {
         // Require model file
         require_once '../app/models/'.$model.'.php';
@@ -20,7 +20,7 @@ class Controller
     }
 
     // Load view
-    public function view(string $view, array $data = [])
+    protected function view(string $view, array $data = [])
     {
         // Check for the view file
         if (file_exists('../app/views/'.$view.'.php')) {

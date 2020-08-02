@@ -12,4 +12,13 @@ class PagesController extends Controller
 
         $this->view('pages/index', $data);
     }
+
+    public function scoreboard()
+    {
+        $data = [
+            'title' => 'Scoreboard',
+        ];
+
+        $this->view('pages/scoreboard', $data);
+    }
 }
