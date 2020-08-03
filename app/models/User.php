@@ -28,6 +28,21 @@ class User
         return false;
     }
 
+    // Login User
+    public function login($username, $password)
+    {
+        $this->db->query("SELECT * FROM {$this->table} WHERE username = :username");
+        $this->db->bind(':username', $username);
+
+        $row = $this->db->single();
+        $hashed_password = $row->password;
+
+        if (password_verify($password, $hashed_password)) {
+            return $row;
+        } else {
+            return false;
+        }
+    }
 
     public function findUserByUsername($username)
     {

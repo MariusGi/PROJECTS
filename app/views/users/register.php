@@ -3,7 +3,7 @@
     <div class="col-md-6 mx-auto">
         <div class="card card-body bg-light mt-5">
             <h2>Create an account</h2>
-            <p>Please fill out this form to register with us</p>
+            <p>Please fill out this form to register</p>
             <form action="<?php echo URLROOT; ?>/users/register" method="post">
                 <div class="form-group">
                     <label for="username">Username: <sup>*</sup></label>

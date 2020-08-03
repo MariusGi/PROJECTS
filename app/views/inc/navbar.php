@@ -15,7 +15,7 @@
             <?php if (isset($_SESSION['user_id'])) : ?>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Welcome <?php echo $_SESSION['user_name']; ?></a>
+                    <a class="nav-link disabled" href="#">Welcome <?php echo $_SESSION['username']; ?></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo URLROOT; ?>/users/logout">Log out</a>
