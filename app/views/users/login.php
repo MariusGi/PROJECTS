@@ -4,7 +4,7 @@
         <?php SessionHelper::flash('register_success'); ?>
         <?php SessionHelper::flash('logout_success'); ?>
         <div class="card card-body bg-light mt-5">
-            <h2>Log in</h2>
+            <h2><?php echo ucfirst($data['title']); ?></h2>
             <p>Please fill in your credentials to log in</p>
             <form action="<?php echo URLROOT; ?>/users/login" method="post">
                 <div class="form-group">

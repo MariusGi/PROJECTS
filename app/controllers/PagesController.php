@@ -16,7 +16,7 @@ class PagesController extends Controller
     public function scoreboard()
     {
         $data = [
-            'title' => 'Scoreboard',
+            'title' => 'scoreboard',
         ];
 
         $this->view('pages/scoreboard', $data);

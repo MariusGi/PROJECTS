@@ -17,6 +17,7 @@ class UsersController extends Controller
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             // Init data
             $data = [
+                'title' => 'create an account',
                 'username' => '',
                 'email' => '',
                 'password' => '',
@@ -39,6 +40,7 @@ class UsersController extends Controller
 
         // Init data
         $data = [
+            'title' => 'create an account',
             'username' => trim($_POST['username']),
             'password' => trim($_POST['password']),
             'confirm_password' => trim($_POST['confirm_password']),
@@ -96,6 +98,7 @@ class UsersController extends Controller
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             // Init data
             $data = [
+                'title' => 'log in',
                 'username' => '',
                 'password' => '',
                 'username_err' => '',
@@ -113,6 +116,7 @@ class UsersController extends Controller
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
         // Init data
         $data = [
+            'title' => 'log in',
             'username' => trim($_POST['username']),
             'password' => trim($_POST['password']),
             'username_err' => '',
