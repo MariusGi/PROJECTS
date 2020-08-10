@@ -11,24 +11,21 @@ $('.btn-start-game').on('click', function() {
 function animateDiv() {
     let newq = makeNewPosition();
     let movingObject = $('.moving-object');
-    let oldq = movingObject.offset();
-    let speed = calcSpeed([oldq.top, oldq.left], newq);
-
-    movingObject.animate({ top: newq[0], left: newq[1] }, speed, function() {
+    // let speed = calcSpeed([oldq.top, oldq.left], newq);
+    movingObject.animate({ top: newq[0], left: newq[1] }, 1000, function() {
         animateDiv();
     });
 }
 
 function makeNewPosition() {
     // Get viewport dimensions (remove the dimension of the div)
-    let height = $('.moving-object').height();
-    let width = $('.moving-object').width();
-    console.log(height);
-    console.log(width);
-    let newHeight = Math.floor(Math.random() * height);
-    let newWidth = Math.floor(Math.random() * width);
+    let movingObject = $('.moving-object');
+    let top = Math.random() * (10 - 5) + 5
+    let left = movingObject.position().left;
+    let newTop = (Math.random() * (1.1 - 0.9) + 0.9) * top;
+    let newLeft = (Math.random() * (1.05 - 0.95) + 0.95) * left;
 
-    return [newHeight, newWidth];
+    return [newTop, newLeft];
 }
 
 function calcSpeed(prev, next) {
